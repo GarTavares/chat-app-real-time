@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat</title>
+</head>
+<body>
+  <input type="text" id="usuario" placeholder="Seu nome" />
+  <input type="text" id="mensagem" placeholder="Digite sua mensagem" />
+  <button onclick="enviar()">Enviar</button>
+
+  <ul id="chat"></ul>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
