@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io("https://meuchat-api.onrender.com");
 
 function enviar() {
   const texto = document.getElementById("mensagem").value;
