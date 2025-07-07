@@ -38,4 +38,12 @@ async function carregarMensagens() {
   });
 }
 
+function adicionarMensagemNaTela(msg) {
+  const ul = document.getElementById("chat");
+  const li = document.getElementById("li");
+  li.textContent = `${msg.usuario}: ${msg.texto}`;
+  ul.appendChild(li);
+  ul.scrollTop = ul.scrollHeight;
+}
+
 window.addEventListener("load", carregarMensagens);
