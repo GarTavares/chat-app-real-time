@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rede Social TCC - Feed</title>
+  <link rel="stylesheet" href="/styleindex.css" />
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1 class="logo">Rede Social TCC</h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="/">Feed</a></li>
+          <li><a href="/chat">Chat</a></li>
+          <li><a href="/perfil">Perfil</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="feed">
+      <h2>Feed de Posts</h2>
+      <!-- Posts vão aparecer aqui -->
+       <form id="formPost">
+        <input type="text" id="autor" placeholder="Seu nome" required/>
+        <textarea id="text" placeholder="Escreva algo..." required></textarea>
+        <button type="submit">Publicar</button>
+       </form>
+      <div id="posts"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Rede Social TCC - Gabriel Tavares, Igor Sousa Silva, Henrique Ascêncio Batalha </p>
+    </div>
+  </footer>
+
+</body>
+</html>

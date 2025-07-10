@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <div id="chat-container">
+    <h2>Chat em Tempo Real</h2>
+
+    <ul id="chat">
+        <% if (mensagens && mensagens.length) { %>
+            <% mensagens.forEach(msg=> { %>
+                <li>
+                    <%= msg.usuario %>: <%= msg.texto %>
+                </li>
+                <% }) %>
+                    <% } %>
+    </ul>
+
+    <input type="text" id="usuario" placeholder="Seu nome" />
+    <input type="text" id="mensagem" placeholder="Digite uma mensagem" />
+    <button onclick="enviar()">Enviar</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chat.js"></script>
+</body>
+
+</html>

@@ -1,49 +1,22 @@
-const socket = io("https://meuchat-api.onrender.com");
-//const socket = io("http://localhost:3000");
-
-socket.on("connect", ()=> {
-  console.log("Socket conectado com ID:", socket.id);
-});
+const socket = io();
 
 function enviar() {
-  const texto = document.getElementById("mensagem").value;
-  const usuario = document.getElementById("usuario").value;
+  const texto = document.getElementById("mensagem").value.trim();
+  const usuario = document.getElementById("usuario").value.trim();
 
-  if (!texto || !usuario) return;
+  if (!texto || !usuario) {
+    alert("Preencha nome e mensagem!");
+    return;
+  }
 
   socket.emit("novaMensagem", { texto, usuario });
   document.getElementById("mensagem").value = "";
 }
 
-// Adiciona mensagem na tela
-function adicionarMensagemNaTela(msg) {
+socket.on("mensagemRecebida", (msg) => {
   const ul = document.getElementById("chat");
   const li = document.createElement("li");
   li.textContent = `${msg.usuario}: ${msg.texto}`;
   ul.appendChild(li);
-}
-
-// Recebe mensagens em tempo real
-socket.on("mensagemRecebida", (msg) => {
-  adicionarMensagemNaTela(msg);
-});
-
-// Carrega mensagens anteriores
-async function carregarMensagens() {
-  const resposta = await fetch("/mensagens");
-  const mensagens = await resposta.json();
-
-  mensagens.forEach((msg) => {
-    adicionarMensagemNaTela(msg);
-  });
-}
-
-function adicionarMensagemNaTela(msg) {
-  const ul = document.getElementById("chat");
-  const li = document.getElementById("li");
-  li.textContent = `${msg.usuario}: ${msg.texto}`;
-  ul.appendChild(li);
   ul.scrollTop = ul.scrollHeight;
-}
-
-window.addEventListener("load", carregarMensagens);
+});
