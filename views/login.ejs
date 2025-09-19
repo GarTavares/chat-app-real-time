@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Rede Social TCC</title>
+  <link rel="stylesheet" href="/stylelogin.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="formLogin">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="senha" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <p>Não tem conta? <a href="/cadastro">Cadastre-se</a></p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="/firebase-init.js"></script>
+  <script src="/login.js"></script>
+  <script type="module" src="/login.js"></script>
+</body>
+</html>

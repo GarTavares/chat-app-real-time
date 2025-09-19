@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>cadastro - Rede Social TCC</title>
+  <link rel="stylesheet" href="/stylecadaster.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Criar Nova Conta</h2>
+    <form id="formCadastro">
+      <input type="text" id="nome" placeholder="Seu nome" required/>
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="senha" placeholder="Senha" required />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <p>Já tem uma conta? <a href="/login">Fazer login</a></p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="/firebase-init.js"></script>
+  <script src="/cadastro.js"></script>
+  <script type="module" src="/cadastro.js"></script>
+</body>
+</html>

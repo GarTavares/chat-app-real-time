@@ -51,3 +51,15 @@ button:hover {
     background-color: #0056b3;
 }
 
+.post {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.post p {
+  margin: 5px 0;
+}
+

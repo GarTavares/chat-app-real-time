@@ -1,80 +1,199 @@
-/* Container para centralizar e limitar largura */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+/* styleindex.css */
 
-/* Header */
-header {
-  background-color: #dd0e0e;
-  color: white;
-  padding: 15px 0;
-}
-
-header .logo {
-  margin: 0;
-  display: inline-block;
-}
-
-nav {
-  display: inline-block;
-  float: right;
-}
-
-nav .menu {
-  list-style: none;
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+
 }
 
-nav .menu li {
-  display: inline-block;
-  margin-left: 20px;
+/* Fundo e corpo */
+body {
+  background: #e9eceecb;
+  padding: 20px;
 }
 
-nav .menu li a {
-  color: white;
+/* Container centralizado */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Cabeçalho */
+header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #c42222;
+  padding-bottom: 15px;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #f4f4f4;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.usuario-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.usuario-area i {
+  margin-right: 5px;
+  color: #444;
+}
+
+.logout-btn {
+  color: red;
   text-decoration: none;
   font-weight: bold;
 }
 
-nav .menu li a:hover {
-  text-decoration: underline;
+
+nav ul.menu {
+  display: flex;
+  gap: 25px;
+  margin-top: 10px;
+  list-style: none;
 }
 
-/* Main */
-main {
-  margin: 20px 0;
+nav ul.menu li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-/* Footer */
-footer {
-  background-color: #eee;
-  text-align: center;
-  padding: 15px 0;
-  color: #666;
-  font-size: 14px;
-  border-top: 1px solid #ccc;
+nav ul.menu li a:hover,
+nav ul.menu li a.active {
+  color: #e41414;
+  border-bottom: 2px solid #cf0c0c;
+  padding-bottom: 3px;
 }
 
-.post {
+/* Formulário de post */
+form#formPost {
+  margin-bottom: 30px;
+}
+
+form#formPost input[type="text"],
+form#formPost textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  background: white;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+form#formPost input[type="text"]:focus,
+form#formPost textarea:focus {
+  border-color: #e41414;
+  outline: none;
+  box-shadow: 0 0 5px #791b1b;
+}
+
+form#formPost button {
+  background-color: #e41414;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+form#formPost button:hover {
+  background-color: #791b1b;
+}
+
+/* Feed de posts */
+#posts .post {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+#posts .post:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
 .post p {
-  margin: 5px 0;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.post p strong {
+  color: #e41414;
+}
+
+.post small {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* Reações */
+.reacoes {
+  display: flex;
+  gap: 15px;
 }
 
 .reacoes button {
-  margin-right: 10px;
-  cursor: pointer;
-  background: none;
+  background: transparent;
   border: none;
-  font-size: 16px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
 }
 
+.reacoes button:hover {
+  color: #e41414;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px 18px;
+  }
+
+  nav ul.menu {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.reacoes button.ativo {
+  color:#791b1b;
+  font-weight: bold;
+}
